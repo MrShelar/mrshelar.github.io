@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Task From TaskCode</title>
+
+<meta name="monetag" content="8bfbd4542ae2f629eafd8d4f83cdad9d">
+
+<style>
+body{
+    margin:0;
+    padding:0;
+    height:100vh;
+    background:url('background.jpg');
+    background-size:cover;
+    background-position:center;
+    font-family:Arial,sans-serif;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.box{
+    width:90%;
+    max-width:500px;
+    text-align:center;
+
+    background:rgba(0,0,0,0.65);
+    backdrop-filter:blur(10px);
+
+    border-radius:20px;
+    padding:25px;
+}
+
+.logo{
+    width:120px;
+    margin-bottom:15px;
+}
+
+h1{
+    color:white;
+}
+
+p{
+    color:#ddd;
+}
+
+#countdown{
+    color:#00ffcc;
+    font-size:40px;
+    font-weight:bold;
+    margin:20px 0;
+}
+
+#codeBox{
+    display:none;
+    margin-top:20px;
+}
+
+.code{
+    background:#00aaff;
+    color:white;
+    padding:12px 20px;
+    border-radius:12px;
+    font-size:24px;
+    font-weight:bold;
+    display:inline-block;
+}
+</style>
+</head>
+
+<body>
+
+<div class="box">
+
+<img src="logo.png" class="logo">
+
+<h1>Task Verification</h1>
+
+<p>Please wait while your code is being prepared...</p>
+
+<!-- Monetag MultiTag -->
+<script src="https://quge5.com/88/tag.min.js"
+data-zone="259190"
+async
+data-cfasync="false"></script>
+
+<div id="countdown">10</div>
+
+<div id="codeBox">
+    <p>Your Verification Code</p>
+    <div class="code">CODE1</div>
+</div>
+
+</div>
+
+<script>
+let timeLeft = 10;
+
+const countdown = document.getElementById("countdown");
+
+const timer = setInterval(() => {
+
+    timeLeft--;
+
+    countdown.innerHTML = timeLeft;
+
+    if(timeLeft <= 0){
+
+        clearInterval(timer);
+
+        countdown.style.display = "none";
+
+        document.getElementById("codeBox").style.display = "block";
+    }
+
+},1000);
+</script>
+
+</body>
+</html>
